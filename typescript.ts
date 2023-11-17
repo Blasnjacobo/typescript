@@ -336,4 +336,4 @@ gameBoard[0][1] = 'X'
 //const [hero, setHero]: State = useState('thor')
 
 type RGB = [number, number, number]
-const RGB = [255, 255, 0] // 0-255
+const RGB = [255, 255, 0] // 0-255 ,
