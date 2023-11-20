@@ -1,5 +1,7 @@
+"use strict";
 //Todo In Typescript you have to compile in typescript format an then run the javascript code
 //Todo Example: tsc helloWorld.ts, and then node helloWorld.js
+//Todo para creat el archivo de configuracion usamos npx tsc --init
 // Hola mundo comentado
 console.log('Hola, typescript');
 //* Variables tipadas
@@ -12,19 +14,19 @@ myString2 = 'Aqui cambio el valor de la cadena de texto';
 myString2 = '6';
 console.log(myString);
 console.log(typeof myString);
-var myBool = false;
+let myBool = false;
 myBool = true;
 console.log(myBool);
 console.log(typeof myBool);
 // myBool = undefined //! Type 'undefined' is not assigable to type 'boolean'
-var myUndefined;
+let myUndefined;
 console.log(myUndefined);
 //* constantes
-var myConst = 'Mi propiedad constante';
+const myConst = 'Mi propiedad constante';
 // myConst = 'otro valor'
 console.log(myConst); //! Cannot assign to 'myConst' because it is a constant
 //* Controles de flujo
-var myNumber = 10;
+let myNumber = 10;
 if (myNumber === 10)
     console.log('El valor es 10');
 else
@@ -44,36 +46,34 @@ function sumTwoNumbers(firstNumber, secondNumber) {
 }
 console.log(sumTwoNumbers(4, 10));
 // List
-var myList = ['Blastois', 'Jacobo-2-2'];
+let myList = ['Blastois', 'Jacobo-2-2'];
 console.log(myList);
 // let mySet: Set<string> = ['Agua','No', 'coca'] //! Type 'string[]' is missing the following properties from type 'Set<string>': add, clear, delete, has, and 2 more.
-var mySet = new Set(['Agua', 'No', 'coca', 'No', 'Agua']); //  Set no admite repetidos
+let mySet = new Set(['Agua', 'No', 'coca', 'No', 'Agua']); //  Set no admite repetidos
 console.log(mySet);
 // mySet.add(36) //! Argument of type 'number' is not assignable to parameter of type 'string'
 //* Maps
-var myMap = new Map([['Blas', 5], ['Jacobo', 10]]);
+let myMap = new Map([['Blas', 5], ['Jacobo', 10]]);
 myMap.set('juanitoLopez', 23);
 console.log(myMap);
 console.log(myMap.get('Blas'));
 //ciclos
-for (var _i = 0, myList_1 = myList; _i < myList_1.length; _i++) {
-    var value = myList_1[_i];
+for (const value of myList) {
     console.log(value);
 }
-var myCounter = 0;
+let myCounter = 0;
 while (myCounter < myList.length) {
     console.log(myList[myCounter]);
     myCounter++;
 }
 // Clases
-var MyClass = /** @class */ (function () {
-    function MyClass(name, age) {
+class MyClass {
+    constructor(name, age) {
         this.name = name;
         this.age = age;
     }
-    return MyClass;
-}());
-var myClass = new MyClass('Mayco', 10000);
+}
+let myClass = new MyClass('Mayco', 10000);
 console.log(myClass);
 console.log(myClass.name);
 var MyEnum;
@@ -84,5 +84,5 @@ var MyEnum;
     MyEnum["JAVA"] = "kotlin";
     MyEnum["JAVASCRIPT"] = "javascript";
 })(MyEnum || (MyEnum = {}));
-var myEnum = MyEnum.DART;
+const myEnum = MyEnum.DART;
 console.log(myEnum);
